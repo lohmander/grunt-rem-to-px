@@ -1,8 +1,8 @@
 {
-  "name": "grunt-simple-include",
-  "description": "Super easy way to include files with a familiar syntax.",
-  "version": "0.1.0",
-  "homepage": "https://github.com/lohmander/grunt-simple-include",
+  "name": "grunt-rem-to-px",
+  "description": "Parses CSS and recalculates all values to pixels (for compability reasons).",
+  "version": "0.1.2",
+  "homepage": "https://github.com/lohmander/grunt-rem-to-px",
   "author": {
     "name": "Hannes Lohmander",
     "email": "hannes@lohmander.me",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/lohmander/grunt-simple-include.git"
+    "url": "git://github.com/lohmander/grunt-rem-to-px.git"
   },
   "bugs": {
-    "url": "https://github.com/lohmander/grunt-simple-include/issues"
+    "url": "https://github.com/lohmander/grunt-rem-to-px/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/lohmander/grunt-simple-include/blob/master/LICENSE-MIT"
+      "url": "https://github.com/lohmander/grunt-rem-to-px/blob/master/LICENSE"
     }
   ],
   "main": "Gruntfile.js",

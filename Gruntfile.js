@@ -29,9 +29,12 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    simple_include: {
+    rem_to_px: {
+      options: {
+        baseFontSize: 16
+      },
       default_options: {
-        src: ['test/fixtures/index.html', 'test/fixtures/header.html'],
+        src: ['test/fixtures/style.css'],
         dest: 'tmp/'
       }
     },
@@ -53,7 +56,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'simple_include', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'rem_to_px', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
