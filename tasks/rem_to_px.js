@@ -39,6 +39,29 @@ module.exports = function(grunt) {
                 replacements = 0,
                 match;
 
+            // Remove attributes without rem
+            filecontent = filecontent.replace(/([^:;{}]*:[^;{}]*)([;}])/g, function(match, contents, ending, offset, s) {
+                if (match.match(/rem/i)) {
+                    return match;
+                }
+                if (ending === '}') {
+                    return ending;
+                }
+                return '';
+            });
+
+            // Remove comments
+            filecontent = filecontent.replace(/\/\*[\S\s]+?\*\//g, '');
+
+            // Remove empty selectors
+            while (filecontent.match(/[^;{}]*{[\s]*}/g)) {
+                filecontent = filecontent.replace(/[^;{}]*{[\s]*}/g, '');
+            }
+
+            // Remove blank lines
+            filecontent = filecontent.replace(/^\s*[\r\n]/gm, '');
+
+            // Calculate and replace rem with px
             while (match = regex.exec(filecontent)) {
                 var pixelValue = Math.round(parseFloat(match[1]) * options.baseFontSize) + 'px';
                 filecontent = filecontent.replace(match[0], pixelValue);
